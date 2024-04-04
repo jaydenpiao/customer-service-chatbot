@@ -4,6 +4,9 @@
 
 pip install openai python-dotenv
 
+- get openai api key from https://platform.openai.com/api-keys
+- store api key in .env as OPENAI_APIKEY="api_key_goes_here"
+
 ## To run single question chatbot
 
 python scripts/init_single_question_chatbot.py
@@ -30,3 +33,10 @@ python scripts/init_continuous_question_bot.py
 2. cd utils
 3. python upload_data.py
 4. https://platform.openai.com/storage
+5. save file id in .env as OPENAI_APIKEY="file_id_goes_here"
+
+## To run script to train model
+
+1. cd utils
+2. python train_model.py
+3. check status here https://platform.openai.com/finetune
