@@ -41,3 +41,7 @@ python scripts/init_continuous_question_bot.py
 2. python train_model.py
 3. check status here https://platform.openai.com/finetune
 4. once training is finished, save model id in .env as TRAINED_MODELID="model_id_goes_here"
+
+### Model trained with 3 epochs
+
+<img src="docs/3_epochs_model.png" alt="3 epochs">
