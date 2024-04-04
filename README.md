@@ -23,3 +23,10 @@ python scripts/init_continuous_question_bot.py
 1. edit input_filename and output_filename
 2. cd utils
 3. python convert_to_jsonl.py
+
+## To run script to upload jsonl data to openai api
+
+1. edit file path
+2. cd utils
+3. python upload_data.py
+4. https://platform.openai.com/storage
