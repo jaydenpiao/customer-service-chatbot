@@ -1,6 +1,9 @@
 from openai import OpenAI
 import os
 import dotenv
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), "..", "utils"))
+from send_appointment_email import send_appointment_email
 
 def prompt_for_appointment_details():
     date = input("Please enter a date for your appointment (YYYY-MM-DD): ")
@@ -48,3 +51,6 @@ while True:
         else:
             print(f"Assistant: {assistant_response}")
             conversation.append({"role": "system", "content": assistant_response})
+    else:
+        print(f"Assistant: {assistant_response}")
+        conversation.append({"role": "system", "content": assistant_response})

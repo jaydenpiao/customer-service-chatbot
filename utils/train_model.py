@@ -9,5 +9,5 @@ client = OpenAI(api_key=os.getenv('OPENAI_APIKEY'))
 client.fine_tuning.jobs.create(
     training_file=os.getenv('DATA_FILEID'),
     model="gpt-3.5-turbo-1106",
-    hyperparameters={"n_epochs":8}
+    hyperparameters={"n_epochs":3}
 )
