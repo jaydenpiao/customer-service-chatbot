@@ -1,9 +1,8 @@
 # customer-service-chatbot
 
-## Dependencies
+## Setup
 
-pip install openai python-dotenv
-
+- pip install -r requirements.txt
 - get openai api key from https://platform.openai.com/api-keys
 - store api key in .env as OPENAI_APIKEY="api_key_goes_here"
 
