@@ -2,6 +2,12 @@ from openai import OpenAI
 import os
 import dotenv
 
+def prompt_for_appointment_details():
+    date = input("Please enter a date for your appointment (YYYY-MM-DD): ")
+    time = input("Please enter a time for your appointment (HH:MM): ")
+    email = input("Please enter your email address: ")
+    return date, time, email
+
 dotenv.load_dotenv()
 client = OpenAI(api_key=os.getenv('OPENAI_APIKEY'))
 
@@ -27,6 +33,18 @@ while True:
     )
     assistant_response = response.choices[0].message.content
 
-    # append assistant's response to conversation
-    conversation.append({"role": "system", "content": assistant_response})
-    print(f"Assistant: {assistant_response}")
+    if "book an appointment" in assistant_response.lower():
+        print(f"Assistant: {assistant_response}")
+        user_response = input("Would you like to book an appointment? (yes/no): ")
+        if user_response.lower() == "yes":
+            # get appointment details from user
+            date, time, email = prompt_for_appointment_details()
+            # send appointment confirmation email
+            send_appointment_email(email, date, time)
+            print("your appointment has been booked, and an email confirmation has been sent.")
+
+            conversation.append({"role": "system", "content": f"Appointment booked for {date} at {time}, confirmation sent to {email}."})
+            continue
+        else:
+            print(f"Assistant: {assistant_response}")
+            conversation.append({"role": "system", "content": assistant_response})
