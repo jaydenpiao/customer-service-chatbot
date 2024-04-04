@@ -40,3 +40,4 @@ python scripts/init_continuous_question_bot.py
 1. cd utils
 2. python train_model.py
 3. check status here https://platform.openai.com/finetune
+4. once training is finished, save model id in .env as TRAINED_MODELID="model_id_goes_here"
